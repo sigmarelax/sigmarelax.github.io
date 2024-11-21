@@ -134,27 +134,17 @@
         async function fetchWeather() {
             const weatherWidget = document.getElementById('weather-widget');
             
-            // New York coordinates
-            const lat = 40.7128;
-            const lon = -74.0060;
-            
             try {
-                // First fetch coordinates
-                const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily,alerts&units=imperial&appid=140d3cc92822148ea63aa65b98e08215`);
+                const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=New York,NY,US&appid=140d3cc92822148ea63aa65b98e08215&units=imperial');
                 const data = await response.json();
                 
-                const current = data.current;
-                const temperature = Math.round(current.temp);
-                const description = current.weather[0].description;
-                const feelsLike = Math.round(current.feels_like);
-                const humidity = current.humidity;
+                const temperature = Math.round(data.main.temp);
+                const description = data.weather[0].description;
                 
                 weatherWidget.innerHTML = `
                     🌡️ NEW YORK, NY<br>
                     ${temperature}°F<br>
-                    FEELS LIKE: ${feelsLike}°F<br>
-                    ${description.toUpperCase()}<br>
-                    HUMIDITY: ${humidity}%
+                    ${description.toUpperCase()}
                 `;
             } catch (error) {
                 weatherWidget.innerHTML = 'WEATHER DATA UNAVAILABLE';
@@ -166,5 +156,6 @@
         fetchWeather();
         setInterval(fetchWeather, 600000);
     </script>
+
 </body>
 </html>
