@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nate Santos | Cyberpunk Portfolio</title>
+    <title>Nate Santos</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -242,18 +242,18 @@
 <body>
     <div class="grid-background"></div>
     <div class="sidebar">
-        <a href="#" class="typing">🌐 About</a>
+        <a href="#">⚡ About</a>
         <a href="#">💾 Projects</a>
-        <a href="https://bsky.app/profile/natesantos.eu" target="_blank">🔮 BlueSky</a>
-        <a href="#">🖥️ Contact</a>
-        <a href="#">⚡ Links</a>
+        <a href="https://bsky.app/profile/natesantos.eu" target="_blank">🖥️ BlueSky</a>
+        <a href="#">🔮 Contact</a>
+        <a href="#" class="typing">🌐 Links</a>
     </div>
     <div class="content">
         <div id="weather-widget" class="weather-widget">
             LOADING WEATHER DATA...
         </div>
 
-        <h1>The Personal Page of Nate Santos</h1>
+        <h1>The Personal Page of<br> Nate Santos</h1>
         
         <div class="profile-image">
             <img src="generated_monitors.webp" alt="Monitors">
@@ -288,8 +288,8 @@
                 const description = data.weather[0].description;
                 
                 weatherWidget.innerHTML = `
-                    🌡️ NEW YORK, NY<br>
-                    ${temperature}°F<br>
+                    NEW YORK, NY<br>
+                    🌡️${temperature}°F<br>
                     ${description.toUpperCase()}
                 `;
             } catch (error) {
