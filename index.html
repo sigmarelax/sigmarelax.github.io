@@ -48,7 +48,6 @@
 
         .sidebar {
             width: 200px;
-            background-color: rgba(26, 26, 46, 0.9);
             padding: 20px;
             border-right: 3px solid var(--neon-pink);
             height: 100vh;
@@ -58,6 +57,15 @@
             backdrop-filter: blur(5px);
             z-index: 100;
             flex-shrink: 0;
+            background: linear-gradient(45deg, #1A1A2E, #0F0C1B); /* Base gradient colors */
+            background-size: 400% 400%; /* Increased size for smoother animation */
+            animation: gradientShift 15s ease infinite; /* Animation for gradient shift */
+        }
+        /* Animation for shifting gradient background */
+        @keyframes gradientShift {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         .sidebar a {
