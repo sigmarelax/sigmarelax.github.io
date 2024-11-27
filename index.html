@@ -78,6 +78,13 @@
             border: 1px solid var(--neon-cyan);
             box-shadow: var(--glow-shadow);
             transform: translateX(10px) skew(-5deg);
+             animation: flicker 0.5s infinite alternate; /* Add flickering animation */
+            background-color: rgba(0, 255, 209, 0.1); /* Subtle background highlight */
+        }
+         /* Flicker animation for a glitchy effect */
+        @keyframes flicker {
+            0% { opacity: 0.8; text-shadow: var(--glow-shadow); }
+            100% { opacity: 1; text-shadow: none; }
         }
 
         .content {
@@ -245,7 +252,7 @@
         <a href="#">⚡ About</a>
         <a href="#">💾 Projects</a>
         <a href="https://bsky.app/profile/natesantos.eu" target="_blank">🖥️ BlueSky</a>
-        <a href="mailto:baldr83@gmail.com">🔮 Contact</a>
+        <a href="mailto:nate@natesantos.eu">🔮 Contact</a>
         <a href="#" class="typing">🌐 Links</a>
     </div>
     <div class="content">
